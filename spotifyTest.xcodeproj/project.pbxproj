@@ -13,6 +13,8 @@
 		CEC597221FF9A8E7005966D4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CEC597211FF9A8E7005966D4 /* Assets.xcassets */; };
 		CEC597251FF9A8E7005966D4 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CEC597231FF9A8E7005966D4 /* LaunchScreen.storyboard */; };
 		CEC597281FF9A8E7005966D4 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = CEC597271FF9A8E7005966D4 /* main.m */; };
+		CEC5973C1FFAB560005966D4 /* SpotifyAuthentication.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CEC5973A1FFAB560005966D4 /* SpotifyAuthentication.framework */; };
+		CEC5973D1FFAB560005966D4 /* SpotifyAudioPlayback.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CEC5973B1FFAB560005966D4 /* SpotifyAudioPlayback.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +28,10 @@
 		CEC597241FF9A8E7005966D4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		CEC597261FF9A8E7005966D4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		CEC597271FF9A8E7005966D4 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		CEC5973A1FFAB560005966D4 /* SpotifyAuthentication.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = SpotifyAuthentication.framework; sourceTree = "<group>"; };
+		CEC5973B1FFAB560005966D4 /* SpotifyAudioPlayback.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = SpotifyAudioPlayback.framework; sourceTree = "<group>"; };
+		CEC5973E1FFAB601005966D4 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
+		CEC5973F1FFAB61D005966D4 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -33,6 +39,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CEC5973C1FFAB560005966D4 /* SpotifyAuthentication.framework in Frameworks */,
+				CEC5973D1FFAB560005966D4 /* SpotifyAudioPlayback.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -43,6 +51,7 @@
 			isa = PBXGroup;
 			children = (
 				CEC597171FF9A8E7005966D4 /* spotifyTest */,
+				CEC597391FFAB53B005966D4 /* Frameworks */,
 				CEC597161FF9A8E7005966D4 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -69,6 +78,17 @@
 				CEC597271FF9A8E7005966D4 /* main.m */,
 			);
 			path = spotifyTest;
+			sourceTree = "<group>";
+		};
+		CEC597391FFAB53B005966D4 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				CEC5973F1FFAB61D005966D4 /* SystemConfiguration.framework */,
+				CEC5973E1FFAB601005966D4 /* AVFoundation.framework */,
+				CEC5973B1FFAB560005966D4 /* SpotifyAudioPlayback.framework */,
+				CEC5973A1FFAB560005966D4 /* SpotifyAuthentication.framework */,
+			);
+			path = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -279,8 +299,14 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 2B962CCK39;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Frameworks",
+				);
 				INFOPLIST_FILE = spotifyTest/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_BUNDLE_IDENTIFIER = com.jimmyhiguchi.spotifyTest;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -292,8 +318,14 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 2B962CCK39;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Frameworks",
+				);
 				INFOPLIST_FILE = spotifyTest/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_BUNDLE_IDENTIFIER = com.jimmyhiguchi.spotifyTest;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = "1,2";
